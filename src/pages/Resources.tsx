@@ -1,0 +1,85 @@
+
+import React from 'react';
+import Navigation from '@/components/layout/Navigation';
+import Footer from '@/components/layout/Footer';
+import { Card, CardContent } from '@/components/ui/card';
+
+const Resources = () => {
+  const books = [
+    {
+      title: "Never Search Alone",
+      author: "Phyl Terry",
+      cover: "bg-gray-100",
+      price: "₹0"
+    },
+    {
+      title: "Job Moves", 
+      author: "Ethan Bernstein, Michael B. Horn, Bob Moesta",
+      cover: "bg-orange-400",
+      price: "₹0"
+    },
+    {
+      title: "Designing your life",
+      author: "Bill Burnett, Dave Evans", 
+      cover: "bg-teal-400",
+      price: "₹0"
+    },
+    {
+      title: "The 2-Hour Job Search",
+      author: "Steve Dalton",
+      cover: "bg-gradient-to-br from-orange-300 to-orange-100",
+      price: "₹0"
+    }
+  ];
+
+  return (
+    <div className="min-h-screen bg-white">
+      <Navigation />
+      
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h1 className="text-4xl font-bold text-gray-900 mb-4">
+              Resources
+            </h1>
+            <p className="text-xl text-gray-600">
+              Not sure where to start? Check the list of books that most helped our career changers.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {books.map((book, index) => (
+              <Card key={index} className="hover:shadow-lg transition-shadow cursor-pointer">
+                <CardContent className="p-6">
+                  <div className={`aspect-[3/4] ${book.cover} rounded-lg mb-4 flex items-center justify-center`}>
+                    <div className="text-center p-4">
+                      <div className="text-2xl font-bold text-gray-800 mb-2">
+                        {book.title.split(' ').slice(0, 2).join(' ')}
+                      </div>
+                      <div className="text-sm text-gray-600">
+                        {book.author.split(',')[0]}
+                      </div>
+                    </div>
+                  </div>
+                  <h3 className="font-semibold text-lg mb-2">
+                    {book.title}
+                  </h3>
+                  <p className="text-sm text-gray-600 mb-2">
+                    {book.author}
+                  </p>
+                  <p className="font-semibold text-teal-600">
+                    {book.price}
+                  </p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+      
+      <Footer />
+    </div>
+  );
+};
+
+export default Resources;
