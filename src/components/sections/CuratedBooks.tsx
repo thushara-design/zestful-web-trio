@@ -1,35 +1,9 @@
 
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
+import { BOOKS } from '@/data/constants';
 
 const CuratedBooks = () => {
-  const books = [
-    {
-      title: "Never Search Alone",
-      author: "Phyl Terry",
-      cover: "bg-gray-100",
-      price: "₹0"
-    },
-    {
-      title: "Job Moves",
-      author: "Ethan Bernstein, Michael B. Horn, Bob Moesta",
-      cover: "bg-orange-400",
-      price: "₹0"
-    },
-    {
-      title: "Designing your life",
-      author: "Bill Burnett, Dave Evans",
-      cover: "bg-teal-400",
-      price: "₹0"
-    },
-    {
-      title: "The 2-Hour Job Search",
-      author: "Steve Dalton",
-      cover: "bg-gradient-to-br from-orange-300 to-orange-100",
-      price: "₹0"
-    }
-  ];
-
   return (
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -43,8 +17,8 @@ const CuratedBooks = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {books.map((book, index) => (
-            <Card key={index} className="hover:shadow-lg transition-shadow cursor-pointer">
+          {BOOKS.map((book) => (
+            <Card key={book.id} className="hover:shadow-lg transition-shadow cursor-pointer">
               <CardContent className="p-6">
                 <div className={`aspect-[3/4] ${book.cover} rounded-lg mb-4 flex items-center justify-center`}>
                   <div className="text-center p-4">

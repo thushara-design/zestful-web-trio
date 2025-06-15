@@ -1,29 +1,9 @@
 
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
+import { STORIES } from '@/data/constants';
 
 const SuccessStories = () => {
-  const stories = [
-    {
-      title: "My Journey from Biology to Biostatistics",
-      author: "Elana Ibrahim",
-      duration: "32 minutes",
-      bgColor: "bg-gray-100"
-    },
-    {
-      title: "My Journey From Biology to Biostatistics",
-      author: "Elana Ibrahim", 
-      duration: "32 minutes",
-      bgColor: "bg-gray-800 text-white"
-    },
-    {
-      title: "Success Story 3",
-      author: "Career Changer",
-      duration: "25 minutes",
-      bgColor: "bg-gradient-to-r from-purple-400 to-pink-400 text-white"
-    }
-  ];
-
   return (
     <section className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -37,8 +17,8 @@ const SuccessStories = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {stories.map((story, index) => (
-            <Card key={index} className={`overflow-hidden hover:shadow-lg transition-shadow cursor-pointer ${story.bgColor}`}>
+          {STORIES.map((story) => (
+            <Card key={story.id} className={`overflow-hidden hover:shadow-lg transition-shadow cursor-pointer ${story.bgColor}`}>
               <CardContent className="p-6">
                 <div className="aspect-video bg-gray-200 rounded-lg mb-4 flex items-center justify-center">
                   <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center">

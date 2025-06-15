@@ -2,30 +2,9 @@
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Users, Target, Book } from 'lucide-react';
+import { SERVICES } from '@/data/constants';
 
 const HowWeHelp = () => {
-  const services = [
-    {
-      icon: Users,
-      title: "Join our community",
-      description: "We have a supportive community waiting for you to discover.",
-      cta: "Join discord"
-    },
-    {
-      icon: Target,
-      title: "Create a plan with AI",
-      description: "Confused about where to start? Build a plan and track your progress through the journey.",
-      cta: "Start plan"
-    },
-    {
-      icon: Book,
-      title: "Browse resources",
-      description: "We have curated a database of resources that can help you in your career transformation.",
-      cta: "Start browsing"
-    }
-  ];
-
   return (
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -39,8 +18,8 @@ const HowWeHelp = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <Card key={index} className="text-center hover:shadow-lg transition-shadow">
+          {SERVICES.map((service) => (
+            <Card key={service.id} className="text-center hover:shadow-lg transition-shadow">
               <CardHeader>
                 <div className="mx-auto w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mb-4">
                   <service.icon className="h-8 w-8 text-teal-600" />
